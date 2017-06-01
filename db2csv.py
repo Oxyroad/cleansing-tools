@@ -9,9 +9,9 @@ class Entry:
     header = '"x","y","line"'
 
     def __init__(self, x, y, line):
-        self.x = x
-        self.y = y
-        self.line = line
+        self.x = float(x)
+        self.y = float(y)
+        self.line = int(line)
 
     def __str__(self):
         return '{},{},{}'.format(self.x, self.y, self.line)
