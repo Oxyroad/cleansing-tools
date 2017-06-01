@@ -54,6 +54,10 @@ def is_in_Warsaw_filter(entry):
     return 20 < entry.x < 21 and 51 < entry.y < 53
 
 
+def is_typical_line_filter(entry):
+    return entry.line < 50
+
+
 def main():
     if len(sys.argv) != 2:
         print(usage())
@@ -64,7 +68,8 @@ def main():
     for entry in entries:
         if is_tram_filter(entry):
             if is_in_Warsaw_filter(entry):
-                print(entry)
+                if is_typical_line_filter(entry):
+                    print(entry)
 
 
 if __name__ == '__main__':
