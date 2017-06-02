@@ -10,10 +10,10 @@ from scipy.spatial.distance import cdist
 from const import line_to_length
 from ztm2line_coords import line_to_coords
 
-RADIUS = 0.0005
+RADIUS = 0.0004
 GREEN_SAMPLE_FRAC = 1
-TRAM_SAMPLE_FRAC = 0.0125
-JSON_GREEN_SAMPLE_FRAC = 0.1
+TRAM_SAMPLE_FRAC = 0.01
+JSON_GREEN_SAMPLE_FRAC = 1
 
 RGB = namedtuple('RGB', ['r', 'g', 'b'])
 
