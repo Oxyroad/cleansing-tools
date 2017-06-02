@@ -2,9 +2,10 @@
 
 ## Usage
 
-Put SQLite database into `database.db`. Also, copy `tree_groups.csv` and run:
+Using tools from `scrape-tools` repo, get `database.db`, `tree_groups.csv`, `stations.csv` and `trees.csv`. Then run:
 
 ```sh
 ./prepare_files.sh
 ```
 
+After that, you're ready to modify constants in `process.py` and run it.
