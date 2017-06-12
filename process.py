@@ -13,6 +13,7 @@ from ztm2line_coords import line_to_coords
 RADIUS = 0.0004
 GREEN_SAMPLE_FRAC = 1
 TRAM_SAMPLE_FRAC = 0.01
+MIN_POINTS = 3
 JSON_GREEN_SAMPLE_FRAC = 1
 
 RGB = namedtuple('RGB', ['r', 'g', 'b'])
@@ -66,7 +67,7 @@ for t in trams.groupby('line'):
     line = t[0]
     df = t[1].loc[:, ['x', 'y']].sample(frac=TRAM_SAMPLE_FRAC)
     close_points = cdist(df, greens.loc[:, ['x', 'y']]) <= RADIUS
-    close_greens_indices = np.any(close_points, axis=0)
+    close_greens_indices = np.sum(close_points, axis=0) >= MIN_POINTS
     close_greens_count = np.sum(close_greens_indices)
     close_greens = greens.loc[close_greens_indices, :]
     green_index = close_greens_count/line_to_length[line]
