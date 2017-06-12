@@ -51,7 +51,7 @@ def is_tram_filter(entry):
 
 
 def is_in_Warsaw_filter(entry):
-    return 20 < entry.x < 21 and 51 < entry.y < 53
+    return 20 < entry.x < 22 and 51 < entry.y < 53
 
 
 def is_typical_line_filter(entry):
